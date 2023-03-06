@@ -11,13 +11,14 @@ comment_width = 120
 condense_wildcard_suffixes = true
 control_brace_style = "ClosingNextLine"
 disable_all_formatting = false
-# edition - allow default
+# edition - allow default read from Cargo.toml
 empty_item_single_line = true
 enum_discrim_align_threshold = 0
 error_on_line_overflow = true
 error_on_unformatted = true
-fn_args_layout = "Tall"
+# fn_args_layout = "Tall" - Deprecated, see fn_params_layout
 #fn_call_width - allow use_small_heuristics
+fn_params_layout = "Tall"
 fn_single_line = false
 force_explicit_abi = true
 force_multiline_blocks = true
@@ -25,6 +26,7 @@ format_code_in_doc_comments = true
 doc_comment_code_block_width = 120
 format_generated_files = false
 format_macro_matchers = true
+skip_macro_invocations = []
 format_macro_bodies = true
 format_strings = true
 hard_tabs = true

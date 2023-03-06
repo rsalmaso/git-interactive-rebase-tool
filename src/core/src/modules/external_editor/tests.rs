@@ -19,22 +19,22 @@ fn assert_external_editor_state_eq(actual: &ExternalEditorState, expected: &Exte
 		ExternalEditorState::Error(ref err) => format!("Error({err:#})"),
 	};
 
-	if actual_state != expected_state {
-		panic!(
-			"{}",
-			vec![
-				"\n",
-				"ExternalEditorState does not match",
-				"==========",
-				"Expected:",
-				expected_state.as_str(),
-				"Actual:",
-				actual_state.as_str(),
-				"==========\n"
-			]
-			.join("\n")
-		);
-	}
+	assert_eq!(
+		actual_state,
+		expected_state,
+		"{}",
+		vec![
+			"\n",
+			"ExternalEditorState does not match",
+			"==========",
+			"Expected:",
+			expected_state.as_str(),
+			"Actual:",
+			actual_state.as_str(),
+			"==========\n"
+		]
+		.join("\n")
+	);
 }
 
 #[macro_export]

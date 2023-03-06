@@ -39,7 +39,6 @@
 	unreachable_pub,
 	unsafe_code,
 	unsafe_op_in_unsafe_fn,
-	unstable_features,
 	unused_crate_dependencies,
 	unused_extern_crates,
 	unused_import_braces,
@@ -47,6 +46,7 @@
 	unused_macro_rules,
 	unused_qualifications,
 	unused_results,
+	unused_tuple_struct_fields,
 	variant_size_differences
 )]
 // enable all of Clippy's lints
@@ -92,8 +92,8 @@
 #![cfg_attr(
 	test,
 	allow(
+		let_underscore_drop,
 		clippy::cognitive_complexity,
-		clippy::let_underscore_drop,
 		clippy::let_underscore_must_use,
 		clippy::needless_pass_by_value,
 		clippy::panic,
@@ -105,7 +105,10 @@
 	)
 )]
 // allowable upcoming nightly lints
-#![cfg_attr(include_nightly_lints, allow(clippy::semicolon_outside_block))]
+#![cfg_attr(
+	include_nightly_lints,
+	allow(clippy::let_underscore_untyped, clippy::question_mark_used)
+)]
 // LINT-REPLACE-END
 #![allow(missing_docs, rustdoc::missing_crate_level_docs)]
 
